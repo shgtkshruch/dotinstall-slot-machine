@@ -9,12 +9,18 @@ html(lang="ja")
     meta(content='keywords', name='keywords')
     meta(content='width=device-width, initial-scale=1' name='viewport')
     meta(content='telephone=no', name='format-detection')
-    
+
     link(rel='stylesheet', href='styles/style.css', media='all')
   body
-    h1 Hello Github Pages
+    .panels
+      - for (var i = 0; i < 3; i++)
+        .panel(id="js-panel#{i+1}") ?
 
-    
+    .btns
+      - for (var i = 0; i < 3; i++)
+        .btn.btn--inactive(id="js-btn#{i+1}") STOP
+
+    .spinBtn#js-spinBtn SPIN
 
     // build:js scripts/main.js
     script(src='scripts/script.js')
